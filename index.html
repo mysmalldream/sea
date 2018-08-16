@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>鼓浪屿</title>
+    <style>
+        body{
+            background: radial-gradient(ellipse at center, #430d6d 0%, #000000 100%);
+            height: 500px;
+        }
+
+        .stage {
+            perspective: 1000px;
+            width: 30em;
+            height: 30em;
+            left: 40%;
+            top: 50%;
+            margin-left: -10em;
+            margin-top: -10em;
+            position: absolute;
+        }
+
+        .cube {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transform: rotateX(-20deg) rotateY(-20deg);
+        }
+
+        .cube * {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(54, 226, 248, 0.5);
+            box-shadow: 0 0 5em #fff;
+
+        }
+
+        .font {
+            transform: translateZ(15em);
+        }
+
+        .back {
+            transform: rotateX(180deg) translateZ(15em);
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(15em);
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(15em);
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(15em);
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(15em);
+        }
+
+        @keyframes spin {
+            from {
+                transform: translateZ(-10em) rotateX(0) rotateY(0deg);
+            }
+
+            to {
+                transform: translateZ(-10em) rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        .cube {
+            animation: 6s spin linear infinite;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transform: rotateX(-20deg) rotateY(-20deg);
+        }
+
+        .cube *:before {
+            display: block;
+            background: radial-gradient(center, ellipse, rgba(0, 0, 0, 0) 30%, rgba(0, 128, 0, 0.2) 100%);
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 30%, rgba(0, 128, 0, 0.2) 100%);
+            content: '';
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="cube">
+            <div class="font">
+                <img src="./imgs/1.jpg" alt="">
+            </div>
+            <div class="back">
+                <img src="./imgs/2.jpg" alt="">
+            </div>
+            <div class="left">
+                <img src="./imgs/3.jpg" alt="">
+            </div>
+            <div class="right">
+                <img src="./imgs/4.jpg" alt="">
+            </div>
+            <div class="top">
+                <img src="./imgs/5.jpg" alt="">
+            </div>
+            <div class="bottom">
+                <img src="./imgs/6.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
